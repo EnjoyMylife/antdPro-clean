@@ -1,0 +1,381 @@
+// common
+
+.myForm{
+  >.rowStyle {
+    margin-bottom: 12px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  :global {
+    .ant-form-item-label > label::after {
+      content: "";
+    }
+    .ant-form-item-label {
+      color: rgba(0,0,0,0.85);
+      line-height: 22px;
+      margin-bottom: 8px;
+    }
+    .ant-form-item-control {
+      line-height: 32px;
+    }
+    .ant-select-selection__rendered{
+      line-height: 32px;
+    }
+  }
+}
+
+.FormItem{
+  float: left;
+  margin-right: 72px;
+  &:last-child{
+    margin-right: 0
+  }
+}
+
+.tableListForm {
+  position: relative;
+  .collapse {
+    color: @primary-color;
+    position: absolute;
+    right:0;
+    bottom:70px;
+    cursor: pointer;
+    i {
+      margin-left: 4px;
+    }
+  }
+  .searchBottom {
+    margin:32px 0 16px 0;
+    &:after{
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }
+  :global {
+    .ant-form-item {
+      margin-right: 72px;
+      margin-bottom: 0;
+      display: inline-block;
+      &:nth-child(4),&:nth-child(8),&:nth-child(12),&:nth-child(16){
+        margin-right: 0;
+      }
+    }
+    .ant-select-selection {
+      width: 280px;
+    }
+    .ant-input {
+      width: 280px;
+    }
+  }
+  .submitButtons {
+    display: block;
+    white-space: nowrap;
+    margin-bottom: 24px;
+  }
+}
+.pageTitle {
+  width:80%;
+  margin-top: 24px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+.infoTitle {
+  width: 80%;
+  background: #E9E9E9;
+  border-radius: 3px 3px 0 0;
+  height: 44.8px;
+  line-height: 44.8px;
+  border: 1px solid #E9E9E9;
+  p {
+    color: @primary-color;
+    padding-left: 20px;
+    font-weight: bold;
+  }
+  margin-top: 32px;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+.companyInfo{
+  width: 80%;
+  .tableListForm {
+    :global{
+      .ant-row {
+        margin: 0 !important;
+        line-height: 46.8px;
+        height: 46.8px;
+        border-bottom: 1px solid #E9E9E9;
+        border-left: 1px solid #E9E9E9;
+        &:last-child{
+          border-bottom: 0;
+        }
+        .ant-calendar-picker {
+          width: 100%;
+          max-width: 280px;
+        }
+        .ant-input {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+    }
+  }
+  .noData {
+    border: 1px solid #E9E9E9;
+    border-right: 0;
+    text-align: center;
+    line-height: 200px;
+    color: rgba(0, 0, 0, 0.25);
+  }
+  // .topRow {
+  //   .content,.listLabel{
+  //     border-top:1px solid #E9E9E9;
+  //   }
+  // }
+  border-right: 1px solid #E9E9E9;
+  :global {
+    .ant-row {
+      display: flex;
+      &>.ant-col {
+        position: relative;
+      }
+    }
+
+  }
+  .content {
+    height: 100%;
+    width:-webkit-calc(100% - 190px);
+    width:-moz-calc(100% - 190px);
+    width:calc(100% - 190px);
+    border-bottom:1px solid #E9E9E9;
+    img {
+      width: 120px;
+    }
+    display: inline-block;
+    margin-left: 190px;
+    padding: 12px 20px 12px 20px;
+    p {
+      line-height: 1.5;
+      font-size: 14px;
+    }
+  }
+  .list {
+    padding: 12px 20px;
+    border:1px solid #E9E9E9;
+    border-right: 0;
+    border-top: 0;
+    div {
+      line-height: 2;
+    }
+  }
+  .listLabel {
+    width: 190px;
+    position: absolute;
+    border:1px solid #E9E9E9;
+    border-top:0;
+    color: rgba(0,0,0,0.85);
+    height: 100%;
+    background: #FAFAFA;
+    p {
+      padding: 12px 20px;
+      text-align: left;
+      line-height: 1.5;
+      font-size: 14px;
+    }
+  }
+}
+@media screen and (max-width: 1440px) {
+  .tableListForm {
+    :global {
+      .ant-form-item {
+        margin-right: 24px;
+      }
+      .ant-select-selection {
+        width: 200px;
+      }
+      .ant-input {
+        width: 200px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1700px) {
+  .tableListForm {
+    :global {
+      .ant-form-item {
+        margin-right:40px;
+      }
+      .ant-select-selection {
+        width: 220px;
+      }
+      .ant-input {
+        width: 220px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1780px) {
+  .companyInfo,.infoTitle,.pageTitle {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 1550px) {
+  .companyInfo,.infoTitle,.pageTitle {
+    width: 100%;
+  }
+}
+
+// Modal.confirm 样式重写
+:global {
+  .ant-steps-vertical>.ant-steps-item>.ant-steps-item-container>.ant-steps-item-tail{
+    left: -9px
+  }
+  .ant-table-placeholder {
+    margin-bottom: 40px;
+  }
+  .ant-modal-confirm{
+    width: 320px;
+    height: 156px;
+    .ant-modal-content {
+      width: 320px;
+      height: 168px;
+      position: relative;
+      overflow: hidden;
+    }
+    .ant-modal-body {
+      padding:0 !important;
+    }
+    .ant-modal-confirm-content {
+      text-align: center;
+      margin-left: 0 !important;
+    }
+    .ant-modal-confirm-body-wrapper{
+      i {
+        font-size: 40px;
+        margin: 24px 0 10px;
+      }
+      .ant-modal-confirm-title {
+        text-align: center;
+        color: @primary-color;
+      }
+      .anticon {
+        display: block;
+        text-align: center;
+        float: none;
+        color: @primary-color;
+      }
+      .ant-modal-confirm-btns {
+        position: absolute;
+        bottom: 0;
+        button + button {
+          margin-left: 0;
+        }
+        float: none;
+        margin: 0;
+        .ant-btn {
+          padding: 0;
+          display: inline-block;
+          border: 0;
+          border-radius: 0;
+          width: 160px;
+          height: 40px;
+          line-height: 40px;
+          &:first-child {
+            background: #E2E7E9;
+            color: #4A4A4A;
+          }
+          &:nth-child(2) {
+            background: #063ABD;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+}
+.buildForm {
+  padding-bottom: 40px;
+  .addButton {
+    margin-left: 140px;
+    margin-top: 32px;
+    width:468px;
+    text-align: center;
+  }
+  :global {
+    .ant-form-explain {
+      min-height:0;
+    }
+    .ant-form-item {
+      display: block;
+      margin-bottom: 32px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .ant-btn{
+      &:first-child{
+        margin-right: 16px;
+      }
+    }
+    .ant-form-item-control {
+      line-height: 32px;
+    }
+    .ant-form-item-label{
+      width: 120px;
+      color: rgba(0,0,0,0.85);
+      text-align: right;
+      line-height: 32px;
+    }
+    .ant-input,.ant-select,.ant-select-selection {
+      width: 300px;
+    }
+  }
+}
+.changeSearch{
+  color:#374AFB;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.tableTopData, .tableUl {
+  margin-bottom: 14px;
+  li {
+    display: inline-block;
+    margin-right: 40px;
+    //width: 170px;
+    &:last-child{
+      margin-right: 0;
+    }
+    span {
+      color: #f00;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+}
+
+.tableUl {
+  .totalData {
+    width: 170px;
+  }
+  li {
+    margin-right: 20px;
+    width: 250px;
+  }
+}
+.loadingImg {
+  min-height: 300px;
+  background: url("../../assets/loading.gif") no-repeat center center;
+  background-size: 16%;
+}
+.modalForm {
+  :global{
+    .ant-select-selection {
+      overflow: hidden;
+    }
+  }
+}

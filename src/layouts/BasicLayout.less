@@ -1,0 +1,117 @@
+@import '~antd/lib/style/themes/default.less';
+
+.content {
+  margin: 8px 24px 24px;
+  padding-top: @layout-header-height;
+}
+.menu {
+  position: fixed;
+  right:0;
+  top:200px;
+  z-index: 100;
+}
+.buttonDrawerOpen  {
+  background: @primary-color;
+  font-size: 28px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px 0 0 6px;
+  position: absolute;
+  left:-50px;
+  top:0px;
+  z-index: 1000;
+}
+:global {
+  .ant-drawer {
+    //position: relative;
+    .ant-drawer-content-wrapper {
+      width: 160px !important;
+
+    }
+  }
+  .ant-drawer-right .ant-drawer-content-wrapper{
+    height: 300px;
+    top:160px;
+  }
+  .ant-drawer-content {
+    border-radius: 0 0 0 6px;
+  }
+  .ant-drawer-body {
+    padding: 0;
+  }
+  .ant-drawer-header {
+    display: none;
+  }
+
+}
+.bigTab {
+  :global{
+    .ant-tabs-top .ant-tabs-top-bar{
+      width: calc(100% - 200px);
+    }
+  }
+}
+.smallTab{
+  :global{
+    .ant-tabs-top .ant-tabs-top-bar{
+      width: calc(100% - 80px);
+    }
+  }
+}
+.bigTab,.smallTab{
+  margin-top: 60px;
+  :global{
+    .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab .ant-tabs-close-x {
+      color:rgba(255,0,0,0.3)
+    }
+    .ant-tabs-top .ant-tabs-top-bar{
+      position: fixed;
+      top: @layout-header-height;
+      right: 0;
+      z-index: 99;
+    }
+    .ant-tabs.ant-tabs-card .ant-tabs-card-bar .ant-tabs-tab-active{
+      background: rgba(71,82,238,0.25);
+      border-bottom: 1px solid rgba(71,82,238,0.25)
+    }
+  }
+}
+.menuList {
+  //padding: 14px 0;
+  li {
+    color: #666;
+    p {
+      width: 100%;
+      height: 100%;
+    }
+    padding: 10px 20px;
+    border-bottom: 1px solid #dfdfdf;
+    &:hover {
+      background: rgba(56,75,250,0.6);
+      color: #fff;
+    }
+  }
+}
+.activeTab {
+  height: 40px;
+  color: #1890ff !important;
+  background: #fff !important;
+  border-color: #e8e8e8 !important;
+  border-bottom: 1px solid #fff !important;
+}
+.normalTab{
+  height: 40px;
+  margin: 0;
+  margin-right: 2px;
+  line-height: 38px;
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px 4px 0 0;
+  -webkit-transition: all .3s cubic-bezier(.645, .045, .355, 1);
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
+  cursor: pointer;
+}

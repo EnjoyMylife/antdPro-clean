@@ -1,0 +1,146 @@
+@import '~antd/lib/style/themes/default.less';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+  background: @layout-body-background;
+  .content {
+    width:553px;
+    height:591px;
+    background:rgba(255,255,255,0.55);
+    border-radius:26px;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+  }
+}
+.adminContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  overflow: auto;
+  background: url("https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg");
+  .logo {
+    height: 60px;
+    vertical-align: top;
+    margin-right: 16px;
+  }
+  .lang {
+    width: 35%;
+    display: flex;
+    align-items:center;
+    margin-left: 100px;
+    margin-top: 40px;
+    img {
+      width: 64px;
+      margin-right: 24px;
+    }
+    h3 {
+      font-size:24px;
+      font-weight:500;
+      color:rgba(0,0,0,0.85);
+      line-height:32px;
+      margin-bottom: 4px;
+    }
+    p {
+      font-size:16px;
+      font-weight:500;
+      color:rgba(0,0,0,0.45);
+      line-height: 1;
+    }
+  }
+}
+
+//.lang {
+//  text-align: right;
+//  width: 100%;
+//  height: 40px;
+//  line-height: 44px;
+//  :global(.ant-dropdown-trigger) {
+//    margin-right: 24px;
+//  }
+//}
+
+.content {
+  //padding: 32px 0;
+  //flex: 1;
+  position: absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+@media (min-width: @screen-md-min) {
+  .container {
+    background-image: url('../assets/login_bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .adminContainer {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+  }
+}
+
+.top {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 32px;
+  a {
+    text-decoration: none;
+  }
+}
+.logo {
+  height: 75px;
+  vertical-align: top;
+  margin-right: 16px;
+}
+@media screen and (max-width: 1660px){
+  .container {
+    .content {
+      width: 500px;
+      height: 551px;
+    }
+  }
+  .header {
+    margin-bottom: 20px;
+  }
+  .logo {
+    height: 55px;
+  }
+}
+.title {
+  font-size: 33px;
+  color: @heading-color;
+  font-family: Avenir, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  position: relative;
+  top: 2px;
+}
+
+.desc {
+  font-size: @font-size-base;
+  color: @text-color-secondary;
+  margin-top: 12px;
+  margin-bottom: 40px;
+}
+.beian{
+  position: absolute;
+  bottom: 40px;
+  left:50%;
+  transform: translate(-50%, 0);
+  .icp{
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline
+    }
+  }
+}

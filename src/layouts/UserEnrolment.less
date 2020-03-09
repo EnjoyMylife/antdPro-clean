@@ -1,0 +1,67 @@
+
+.logoBox{
+  float: left;
+  display: flex;
+  // justify-content: center; /* 水平居中 */
+  align-items: center;     /* 垂直居中 */
+  width: 400px;
+  height: 65px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 65px;
+}
+.login{
+  float: right;
+  display: flex;
+  // justify-content: center; /* 水平居中 */
+  align-items: center;     /* 垂直居中 */
+  margin-right: 20px;
+  height: 65px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 65px;
+  cursor: pointer;
+}
+.logo {
+  height: 40px;
+  display: flex;
+  margin: 0 16px;
+}
+
+:global{
+  //.ant-card{
+  //  height: calc(100vh - 115px);
+  //}
+}
+
+.myForm{
+  >.rowStyle {
+    margin-bottom: 12px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  :global {
+    .ant-form-item-label > label::after {
+      content: "";
+    }
+    .ant-form-item-label {
+      color: rgba(0,0,0,0.85);
+      line-height: 22px;
+      margin-bottom: 8px;
+    }
+    .ant-form-item-control {
+      line-height: 32px;
+    }
+    .ant-select-selection__rendered{
+      line-height: 32px;
+    }
+  }
+}
+
+.buttons{
+  float: right;
+  position: absolute;
+  bottom: 12px;
+  right: 18px;
+}

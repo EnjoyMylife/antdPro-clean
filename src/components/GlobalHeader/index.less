@@ -1,0 +1,209 @@
+@import '~antd/lib/style/themes/default.less';
+
+@pro-header-hover-bg: rgba(0, 0, 0, 0.025);
+
+.header {
+  height: @layout-header-height;
+  padding: 0;
+  background:linear-gradient(45deg,rgba(67,82,237,1) 0%,rgba(99,80,244,1) 100%);
+  box-shadow:5px 1px 6px 2px rgba(0,0,0,0.2);
+  position: relative;
+  :global {
+    .ant-radio-button-wrapper {
+      height: 64px;
+      padding: 0 24px;
+      background: transparent;
+      line-height: 64px;
+      color: #fff;
+      &:first-child,&:last-child {
+        border-radius: 0;
+      }
+      &:hover {
+        //background: #374AFB;
+        color: #fff;
+      }
+    }
+    .ant-radio-button-wrapper{
+      border: none
+    }
+    .ant-radio-button-wrapper:first-child{
+      border: none
+    }
+    .ant-radio-button-wrapper-checked:focus-within {
+      outline: none
+    }
+    .ant-radio-button-wrapper-checked:hover{
+      box-shadow: none
+    }
+    .ant-radio-button-wrapper:not(:first-child)::before{
+      width: 0;
+    }
+    .ant-radio-button-wrapper.ant-radio-button-wrapper-checked:first-child{
+      position: relative;
+      &:after {
+        display: block;
+        content: "";
+        width: calc(100% - 48px);
+        height: 4px;
+        border-radius: 2px;
+        background: #63C9CB;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    .ant-radio-button-wrapper-checked {
+      position: relative;
+      color: #fff;
+      box-shadow: none;
+      &:after {
+        display: block;
+        content: "";
+        width: calc(100% - 48px);
+        height: 4px;
+        border-radius: 2px;
+        background: #63C9CB;
+        position: absolute;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+.logo {
+  height: @layout-header-height;
+  line-height: @layout-header-height;
+  vertical-align: top;
+  display: inline-block;
+  padding: 0 0 0 24px;
+  cursor: pointer;
+  font-size: 22px;
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.menu {
+  :global(.anticon) {
+    margin-right: 8px;
+  }
+  :global(.ant-dropdown-menu-item) {
+    min-width: 160px;
+  }
+}
+
+.trigger {
+  font-size: 20px;
+  height: @layout-header-height;
+  cursor: pointer;
+  transition: all 0.3s, padding 0s;
+  padding: ~'calc((@{layout-header-height} - 20px) / 2)' 24px;
+  &:hover {
+    background: @pro-header-hover-bg;
+  }
+}
+
+.menuList {
+  color: #fff;
+  margin-right: 40px;
+  i{
+    font-style: normal;
+    margin-left: 10px;
+  }
+}
+
+.right {
+  color: #fff;
+  float: right;
+  height: 100%;
+  margin-right: 24px;
+  overflow: hidden;
+  .action {
+    cursor: pointer;
+    padding: 0 12px;
+    display: inline-block;
+    transition: all 0.3s;
+    height: 100%;
+    > i {
+      vertical-align: middle;
+      color: @text-color;
+    }
+    &:hover {
+      background: @pro-header-hover-bg;
+    }
+    &:global(.opened) {
+      background: @pro-header-hover-bg;
+    }
+  }
+  .search {
+    padding: 0 12px;
+    &:hover {
+      background: transparent;
+    }
+  }
+  .account {
+    .avatar {
+      //margin: ~'calc((@{layout-header-height} - 24px) / 2)' 0;
+      margin-right: 8px;
+      //background: rgba(255, 255, 255, 0.85);
+      font-size: 16px;
+      color: #fff;
+      line-height: 64px;
+    }
+    .name {
+      float: right;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100px;
+    }
+  }
+}
+
+.dark {
+  height: @layout-header-height;
+  .action {
+    color: rgba(255, 255, 255, 0.85);
+    > i {
+      color: rgba(255, 255, 255, 0.85);
+    }
+    &:hover,
+    &:global(.opened) {
+      background: @primary-color;
+    }
+    :global(.ant-badge) {
+      color: rgba(255, 255, 255, 0.85);
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-md) {
+  .header {
+    :global(.ant-divider-vertical) {
+      vertical-align: unset;
+    }
+    .name {
+      display: none;
+    }
+    i.trigger {
+      padding: 22px 12px;
+    }
+    .logo {
+      padding-left: 12px;
+      padding-right: 12px;
+      position: relative;
+    }
+    .right {
+      position: absolute;
+      right: 12px;
+      top: 0;
+      background: #fff;
+      .account {
+        .avatar {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
